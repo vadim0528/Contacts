@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <title> Contacts </title>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" type="text/css" href="../style/style.css" media="screen">
+    <script type="text/javascript" src="../script/js.js"></script>
 </head>
-<body>
-
+<body onload="refreshList()">
+<header>
+    <button class="button addWindowShow" onclick="showAddContact()"> Добавить контакт </button>
+    <input type="text" id="searchField" placeholder="Поиск" onkeyup="contactSearch()">
+</header>
+<div id="addContactWindow">
+    <p> Имя </p>
+    <input type="text" id="nameField"><p id="errorName"> Неверное имя! </p>
+    <p> Номер телефона </p>
+    <input type="number" id="numberField"><p id="errorNumber"> Неверный номер </p><br>
+    <button class="button buttonContact" onclick="addContact()"> Добавить </button>
+    <button class="button buttonContact1" onclick="hideAddContact()"> Отмена </button>
+</div>
+<div>
+    <div id="info">
+        <p class="contactsWindowText"> Имя </p>
+        <p class="contactsWindowTextN"> Номер </p>
+        <button class="button deleteButton" onclick="deleteContact()"> Удалить контакты </button>
+    </div>
+    <div id="contacts"></div>
+</div>
 </body>
 </html>
